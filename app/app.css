@@ -1,0 +1,90 @@
+/* app css stylesheet */
+
+.menu {
+	list-style: none;
+	border-bottom: 0.1em solid black;
+	margin-bottom: 2em;
+	padding: 0 0 0.5em;
+}
+
+.menu:before {
+	content: "[";
+}
+
+.menu:after {
+	content: "]";
+}
+
+.menu > li {
+	display: inline;
+}
+
+.menu > li + li:before {
+	content: "|";
+	padding-right: 0.3em;
+}
+
+/*Search Places*/
+
+/* Optional: Makes the sample page fill the window. */
+html, body {
+	height: 100%;
+	max-height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/*Header*/
+.btn-outline-success{
+	margin: 0 5px;
+}
+
+.navbar{
+	height: 10% !important;
+}
+
+.navbar .formHeader{
+	text-align: center;
+}
+
+#map {
+	height: 100%;
+	width: 69%;
+	float: right ;
+}
+
+.listContainer {
+	overflow-y: scroll;
+	max-height: 100%;
+	margin: 5px 0 0 5px;
+}
+
+.list {
+	padding: 15px;
+	margin: 0px 15px 0px 5px;
+	border-bottom: solid 1px lightgray;
+	/* border-radius: 10px; */
+	/* border-bottom: none; */
+	width: 95%;
+	max-width: 95%;
+	/* box-shadow: 1px 1px 3px #ccc; */
+}
+
+.list:hover{
+	/*border: solid 2px lightgreen;*/
+	background-color: rgba(0, 0, 0, 0.09);
+	/*color: #fff;*/
+}
+
+.locationName {
+	/*color: #0f944d;*/
+	font-size: 1em;
+}
+
+.fa-map-marker {
+	/*color: #0f944d;*/
+}
+
+.hide {
+	display: none;
+}

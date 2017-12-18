@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Place searches</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ1BCe4Q7YL1nCa_ovtet4Bjn52tT20T8&libraries=places&callback=initMap" async defer></script>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="formHeader">
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" placeholder="Ex. 18.7717874,98.9742796" aria-label="Search" ng-model="location" required>
+				<input class="form-control mr-sm-2"  placeholder="radius​" aria-label="Search" ng-model="radius" required>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="initMap()">
+					<i class="fa fa-search"></i>
+				</button>
+				<button id="thisarea" class="btn btn-outline-success my-2 my-sm-0 hide" ng-click="searchThisArea()">
+					Search this area <i class="fa fa-location-arrow"></i>
+				</button>
+			</form>
+		</div>
+	</nav>
+	<div id="map" ng-click="changeCenter()"></div>
+
+	<div class="listContainer" ng-if="!loading">
+		<div class="list" ng-repeat="result in results | orderBy : 'name'" ng-click="selectMarker(result, $index)">
+			<div id="{{$index}}" >
+				<b class="locationName">{{$index+1}}. {{result.name}}</b>
+				<br>
+				<i class="fa fa-map-marker"></i> {{result.distance}}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
